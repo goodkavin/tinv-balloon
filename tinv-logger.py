@@ -35,12 +35,12 @@ text_file = open("logs/"+datetime.datetime.fromtimestamp(time.time()).strftime('
 while True:
     temp = format(bmp.readTemperature(), '.2f')
     pressure = format(bmp.readPressure() / 100, '.2f')
-    altitude = format(bmp.readAltitude(100500), '.2f') #input sea level pressure to calibrate alt
+    altitude = format(bmp.readAltitude(101060), '.2f') #input sea level pressure to calibrate alt
     ts = time.time()
     stamp = datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S.%f')
     print "Temperature: " + temp + " C"
     print "Pressure:    " + pressure + " hPa"
-    print "Altitude:    " + altitude + "% meters"
+    print "Altitude:    " + altitude + " meters"
     print "Timestamp:   " + stamp
     print "---------------------------------"
     log = str(temp) + "," + str(pressure) + "," + str(altitude) + "," + str(stamp)
